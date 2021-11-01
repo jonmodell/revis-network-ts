@@ -1,0 +1,9 @@
+{
+  "name": "revis-network-ts",
+  "version": "2.0.0",
+  "description": "React network visualization library",
+  "main": "index.ts",
+  "author": "Jon Modell<jon@jonmodell.com>",
+  "license": "MIT",
+  "private": false
+}
