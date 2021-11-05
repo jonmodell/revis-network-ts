@@ -33,7 +33,7 @@ import { Renderer } from "./Renderer";
 import { RevisNode, RevisEdge } from "./components";
 import { usePanScale, useInteraction } from "./hooks";
 
-import { RevisNetworkBaseProps, RevisScreen, RevisShapeDefinition } from "./types";
+import { RevisNetworkBaseProps, RevisScreen, RevisShapeDefinition, RevisGraph } from "./types";
 
 const RevisNetworkBase = (props: RevisNetworkBaseProps) => {
   const {
@@ -73,7 +73,7 @@ const RevisNetworkBase = (props: RevisNetworkBaseProps) => {
     new Map()
   );
   const edges = useRef<Map<string, RevisEdge>>(new Map());
-  const shapesRef = useRef();
+  const shapesRef = useRef<RevisShapeDefinition[]>();
   const lastLayouterResult = useRef(props.layouter);
 
   const baseCanvas: React.RefObject<HTMLCanvasElement> = useRef<HTMLCanvasElement | null>(
@@ -642,34 +642,8 @@ const RevisNetworkBase = (props: RevisNetworkBaseProps) => {
     shapesRef,
   ]);
 
-  interface RevisNodeDefinition {
-    fixed?: boolean;
-    id: string;
-    image?: string;
-    innerLabel?: string;
-    label?: string;
-    shape?: string;
-    size?: number;
-    type?: string;
-    x?: number;
-    y?: number;
-    style: {
-      border: string;
-    };
-  }
-
-  interface RevisEdgeDefinition {
-    id: string;
-    source: string;
-    target: string;
-  }
-
-  interface RevisGraph {
-    nodes: RevisNodeDefinition[];
-    edges: RevisEdgeDefinition[];
-  }
   const checkGraph = useCallback(
-    (nextGraph: RevisGraph, nextShapes: RevisShapeDefinition[]) => {
+    (nextGraph: RevisGraph, nextShapes?: RevisShapeDefinition[]) => {
       // gType is graph type, mType is the Map type that corresponds
 
       // @ts-ignore

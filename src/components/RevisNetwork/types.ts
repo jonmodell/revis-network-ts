@@ -160,7 +160,6 @@ export interface RevisEdgeDefinition {
 export interface RevisGraph {
   nodes: RevisNodeDefinition[];
   edges: RevisEdgeDefinition[];
-  shapes: RevisShapeDefinition[];
 }
 
 export interface RevisNetworkBaseProps {
@@ -276,7 +275,7 @@ export type EditItem = {
 
 export type NodeDrawingFunction = (node: RevisNode, ctx: CanvasRenderingContext2D) => void;
 export type ShapeDrawingFunction = (
-  shape: RevisShape,
+  shape: RevisShapeDefinition,
   ctx: CanvasRenderingContext2D
 ) => void;
 
@@ -292,7 +291,7 @@ export interface RendererProps {
   customControls: React.ReactNode;
   nodes: Map<string, RevisNode>;
   edges: Map<string, RevisEdge>;
-  shapes: Map<string, RevisShape>;
+  shapes: RevisShapeDefinition[];
   bounds: Bounds;
   panScaleState: PanScaleState;
   interactionState: InteractionState;

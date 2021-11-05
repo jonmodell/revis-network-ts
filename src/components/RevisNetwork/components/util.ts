@@ -1,10 +1,9 @@
 export function drawText(
-  ctx,
-  lbl,
-  fill,
-  fontSize,
-  allowedCharacters,
-  sizeFactor
+  ctx: CanvasRenderingContext2D,
+  lbl: string,
+  fill: string,
+  fontSize: number,
+  allowedCharacters: number = 1000,
 ) {
   const txt = typeof lbl === "string" ? lbl : JSON.stringify(lbl); // for non string labels
   ctx.fillStyle = fill;
@@ -65,6 +64,29 @@ export function drawImage(
   }
 }
 
+  /**
+   * helper for _getDistanceToBezierEdge
+   **/
+   export function getDistanceToLine(x1: number, y1: number, x2: number, y2: number, x3: number, y3: number) {
+    const px = x2 - x1;
+    const py = y2 - y1;
+    const something = px * px + py * py;
+    let u = ((x3 - x1) * px + (y3 - y1) * py) / something;
+
+    if (u > 1) {
+      u = 1;
+    } else if (u < 0) {
+      u = 0;
+    }
+
+    const x = x1 + u * px;
+    const y = y1 + u * py;
+    const dx = x - x3;
+    const dy = y - y3;
+
+    return Math.sqrt(dx * dx + dy * dy);
+  }
+
 /**
  * Calculate the distance between a point (x3,y3) and a line segment from
  * (x1,y1) to (x2,y2).
@@ -95,7 +117,7 @@ export function getDistanceToBezierEdge(
     y = tm2 * y1 + 2 * t * (1 - t) * viaY + t2 * y2;
     if (i > 0) {
       // test out the distance from the point to each segment and find the min
-      distance = this.getDistanceToLine(lastX, lastY, x, y, x3, y3);
+      distance = getDistanceToLine(lastX, lastY, x, y, x3, y3);
       minDistance = distance < minDistance ? distance : minDistance;
     }
     lastX = x;
