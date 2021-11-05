@@ -13,28 +13,45 @@
     "@rollup/plugin-commonjs": "^21.0.1",
     "@rollup/plugin-node-resolve": "^13.0.6",
     "@storybook/addon-actions": "^6.3.12",
+    "@storybook/addon-docs": "^6.3.12",
     "@storybook/addon-essentials": "^6.3.12",
+    "@storybook/addon-knobs": "^6.3.1",
     "@storybook/addon-links": "^6.3.12",
+    "@storybook/addon-storysource": "^6.3.12",
     "@storybook/react": "^6.3.12",
+    "@types/lodash": "^4.14.176",
     "@types/react": "^17.0.33",
+    "@types/styled-components": "^5.1.15",
+    "@types/uuid": "^8.3.1",
     "babel-loader": "^8.2.3",
+    "d3-force": "^3.0.0",
+    "dagre": "^0.8.5",
     "postcss": "^8.3.11",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "rimraf": "^3.0.2",
     "rollup": "^2.59.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^4.0.1",
     "rollup-plugin-typescript2": "^0.30.0",
+    "seedrandom": "^3.0.5",
     "typescript": "^4.4.4"
   },
   "peerDependencies": {
     "react": "^16.8.0",
     "react-dom": "^16.8.0"
   },
-  "dependencies": {},
+  "dependencies": {
+    "lodash": "^4.17.21",
+    "ramda": "^0.27.1",
+    "react-resize-detector": "^6.7.6",
+    "styled-components": "^5.3.3",
+    "uuid": "^8.3.2"
+  },
   "scripts": {
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "build": "rollup -c"
+    "build": "rollup -c",
+    "clean": "rimraf lib && rimraf node_modules"
   }
 }
