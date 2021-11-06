@@ -33,14 +33,6 @@
     "@babel/core": "^7.16.0",
     "@rollup/plugin-commonjs": "^21.0.1",
     "@rollup/plugin-node-resolve": "^13.0.6",
-    "@storybook/addon-actions": "^6.3.12",
-    "@storybook/addon-controls": "^6.3.12",
-    "@storybook/addon-docs": "^6.1.21",
-    "@storybook/addon-essentials": "^6.1.21",
-    "@storybook/addon-knobs": "^6.3.1",
-    "@storybook/addon-links": "^6.3.12",
-    "@storybook/addon-storysource": "^6.3.12",
-    "@storybook/react": "^6.3.12",
     "@types/lodash": "^4.14.176",
     "@types/react": "^17.0.33",
     "@types/styled-components": "^5.1.15",
@@ -56,7 +48,6 @@
     "rollup-plugin-postcss": "^4.0.1",
     "rollup-plugin-typescript2": "^0.30.0",
     "seedrandom": "^3.0.5",
-    "semantic-release": "^18.0.0",
     "typescript": "^4.4.4"
   },
   "dependencies": {
@@ -64,7 +55,7 @@
     "ramda": "^0.27.1",
     "react-resize-detector": "^6.7.6",
     "styled-components": "^5.3.3",
-    "uuid": "^8.3.2"
+    "uniqid": "^5.4.0"
   },
   "scripts": {
     "storybook": "start-storybook -p 6006",

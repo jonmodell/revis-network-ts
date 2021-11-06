@@ -8,7 +8,7 @@ import React, {
   memo,
   useMemo,
 } from "react";
-import { v4 as uuidv4 } from 'uuid';
+import uniqid from 'uniqid';
 import { isEqual, merge } from "lodash";
 import {
   getBounds,
@@ -67,7 +67,7 @@ const RevisNetworkBase = (props: RevisNetworkBaseProps) => {
   );
 
   const hoverTimer: React.RefObject<any> = useRef(null);
-  const uid = useRef(identifier || uuidv4());
+  const uid = useRef(identifier || uniqid('revis-'));
 
   const nodes = useRef<Map<string, RevisNode>>(
     new Map()
