@@ -53,7 +53,7 @@ export const WithOptions = () => {
     step: 0.05,
   });
   const getPositions = button('Log Node Positions', () => {
-    const ret = callbackProps.gp();
+    const ret = callbackProps.getPositions();
     console.log(ret);
   });
 
