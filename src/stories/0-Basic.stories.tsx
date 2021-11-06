@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, boolean, number, button } from '@storybook/addon-knobs';
-import ReVisNetwork from '..';
+import { RevisNetwork } from '../RevisNetwork';
 import data from './examples/data/basic';
 // import moreData from '../examples/data/moreBasic';
 import randomData from './examples/data/random';
@@ -14,7 +14,7 @@ import images from './examples/data/images';
 
 export default {
   title: 'RevisNetwork/Basic',
-  component: ReVisNetwork,
+  component: RevisNetwork,
   decorators: [withKnobs],
 };
 
@@ -30,7 +30,7 @@ export const Basic = () => (
       This is a basic example with very few props in the data, and no other
       options set.
     </h2>
-    <ReVisNetwork graph={data} {...actions} />
+    <RevisNetwork graph={data} {...actions} />
   </div>
 );
 
@@ -65,7 +65,7 @@ export const WithOptions = () => {
   return (
     <div>
       <h2>A demonstration, with knobs below, of some basic options.</h2>
-      <ReVisNetwork
+      <RevisNetwork
         graph={graph}
         {...actions}
         options={{
@@ -94,7 +94,7 @@ export const NodeShapes = () => (
       Now with a nodeDrawingFunction that uses the node &quot;shape&quot;
       property.
     </h2>
-    <ReVisNetwork
+    <RevisNetwork
       graph={shapeData}
       nodeDrawingFunction={nodeDrawing}
       {...actions}
@@ -107,7 +107,7 @@ export const BorderColors = () => (
     <h2>
       Style added to the nodes and edges can provide color and line options.
     </h2>
-    <ReVisNetwork
+    <RevisNetwork
       graph={shapeColorData}
       nodeDrawingFunction={nodeDrawing}
       {...actions}
@@ -120,7 +120,7 @@ export const ImagesAndInnerLabels = () => (
     <h2>
       You can also use svg or raster images as icons and add innerLabel props.
     </h2>
-    <ReVisNetwork
+    <RevisNetwork
       graph={shapeIconData}
       options={{
         coverColor: 'rgba(240,240,240,0.6)',
@@ -138,6 +138,6 @@ export const NoZoomControls = () => (
       customControls allows you to implement your own controls, or hide the
       defaults.
     </h2>
-    <ReVisNetwork graph={shapeIconData} customControls={null} />
+    <RevisNetwork graph={shapeIconData} customControls={null} />
   </div>
 );

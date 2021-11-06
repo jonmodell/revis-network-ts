@@ -1,3 +1,3 @@
-import RevisNetwork from "./components/RevisNetwork";
+import { RevisNetwork } from "./RevisNetwork";
 
 export { RevisNetwork };

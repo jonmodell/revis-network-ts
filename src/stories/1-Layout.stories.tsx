@@ -7,7 +7,7 @@ import {
   button,
   select,
 } from '@storybook/addon-knobs';
-import ReVisNetwork from '..';
+import { RevisNetwork } from '../RevisNetwork';
 import randomData from './examples/data/random';
 import images from './examples/data/images';
 import multiParentHierarchical from './examples/layouts/multiParentHierarchical';
@@ -20,7 +20,7 @@ import nodeDrawing from './examples/layouts/tieredDecorator/nodeDrawing';
 
 export default {
   title: 'RevisNetwork/Layout',
-  component: ReVisNetwork,
+  component: RevisNetwork,
   decorators: [withKnobs],
 };
 
@@ -44,7 +44,7 @@ export const Hierarchy = () => {
   };
   const direction = select('Layout Direction', directionOptions, 'UD');
   return (
-    <ReVisNetwork
+    <RevisNetwork
       graph={graph}
       {...actions}
       images={images}
@@ -68,7 +68,7 @@ export const MultiParentHierarcy = () => {
   const spaceNodesByScreenSize = boolean('Space Nodes By Screen Size', false);
 
   return (
-    <ReVisNetwork
+    <RevisNetwork
       graph={graph}
       layouter={multiParentHierarchical}
       images={images}
@@ -94,7 +94,7 @@ export const D3Force = () => {
   const forceType = select('Layout Type', forceTypeOptions, 'directedTree');
 
   return (
-    <ReVisNetwork
+    <RevisNetwork
       graph={graph}
       layouter={force}
       images={images}
@@ -109,7 +109,7 @@ export const TieredHierarchy = () => {
   const decoratorSpacing = number('Decorator Spacing', 20);
 
   return (
-    <ReVisNetwork
+    <RevisNetwork
       graph={graph50}
       layouter={tieredDecorator}
       images={images}

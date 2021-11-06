@@ -2,7 +2,7 @@ import React from 'react';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, boolean, button } from '@storybook/addon-knobs';
 import styled from 'styled-components';
-import ReVisNetwork from '..';
+import { RevisNetwork } from '../RevisNetwork';
 import {
   iconMap,
   nodeDrawing,
@@ -21,7 +21,7 @@ const StyledCard = styled.div`
 
 export default {
   title: 'RevisNetwork/Drawing',
-  component: ReVisNetwork,
+  component: RevisNetwork,
   decorators: [withKnobs],
 };
 
@@ -101,7 +101,7 @@ export const Drawing = () => {
         drag shapes around to move and resize.
       </h3>
 
-      <ReVisNetwork
+      <RevisNetwork
         graph={data}
         shapes={shapeData}
         {...actions}
