@@ -21,6 +21,7 @@
   "module": "lib/index.esm.js",
   "types": "lib/index.d.ts",
   "resolutions": {
+    "ansi-regex": "^5.0.1",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.1",
     "trim": "^0.0.3",
     "chokidar": "^3.5.2",
@@ -46,6 +47,7 @@
     "@types/styled-components": "^5.1.15",
     "@types/uuid": "^8.3.1",
     "babel-loader": "^8.2.3",
+    "commitizen": "^4.2.4",
     "d3-force": "^3.0.0",
     "dagre": "^0.8.5",
     "npm-force-resolutions": "0.0.10",
@@ -58,6 +60,7 @@
     "rollup-plugin-postcss": "^4.0.1",
     "rollup-plugin-typescript2": "^0.30.0",
     "seedrandom": "^3.0.5",
+    "standard-version": "^9.3.2",
     "typescript": "^4.4.4"
   },
   "dependencies": {
@@ -68,12 +71,13 @@
     "uniqid": "^5.4.0"
   },
   "scripts": {
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
     "build": "rollup -c",
+    "build-storybook": "build-storybook",
     "clean": "rimraf lib && rimraf node_modules",
+    "commit": "cz",
     "preinstall": "npx npm-force-resolutions",
     "release": "standard-version",
+    "storybook": "start-storybook -p 6006",
     "test": "jest",
     "test:watch": "jest --watch"
   }
