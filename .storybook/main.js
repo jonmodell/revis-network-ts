@@ -4,8 +4,6 @@ module.exports = {
   ],
   "addons": [
     '@storybook/addon-knobs',
-    '@storybook/addon-actions',
-    '@storybook/addon-options',
-    '@storybook/addon-notes'
+    '@storybook/addon-actions'
   ]
 };
